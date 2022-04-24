@@ -2,10 +2,11 @@ package com.wixteam.barbershop.Shared.Domain.Aggregate;
 
 //import jdk.internal.org.objectweb.asm.TypeReference;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
-public class CustomUUID {
+public class CustomUUID implements Serializable {
 
     private String value;
 

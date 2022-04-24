@@ -1,4 +1,4 @@
-package com.wixteam.barbershop.Users.User.Infraestructure.Hibernate;
+package com.wixteam.barbershop.Shared.Infraestructure.Hibernate;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.hibernate.cfg.AvailableSettings;
