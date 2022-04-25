@@ -1,7 +1,7 @@
 package com.wixteam.barbershop.Users.User.Domain;
 
 import com.wixteam.barbershop.Products.Order.Domain.Order;
-import com.wixteam.barbershop.Users.Phone.Domain.Phone;
+import com.wixteam.barbershop.Users.User.Domain.ValueObjects.Phone;
 import com.wixteam.barbershop.Users.User.Domain.ValueObjects.UserPassword;
 import com.wixteam.barbershop.Users.User.Domain.ValueObjects.UserType;
 import com.wixteam.barbershop.Users.User.Domain.ValueObjects.UserId;
@@ -18,13 +18,13 @@ public class User {
     private Phone phone;
     private ArrayList<Order> orders;
 
-    public User(UserId userid, UserName username, UserPassword userPassword, UserType usertype, Phone phone, ArrayList<Order> orders) {
+    public User(UserId userid, UserName username, UserPassword userPassword, UserType usertype, Phone phone) {
         this.userid = userid;
         this.username = username;
         this.userPassword = userPassword;
         this.usertype = usertype;
         this.phone = phone;
-        this.orders = orders;
+        this.orders = new ArrayList<>();
     }
     public static User create(){
         return null;
