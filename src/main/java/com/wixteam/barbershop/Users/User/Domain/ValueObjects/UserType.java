@@ -10,6 +10,8 @@ public class UserType extends StringValueObject {
         this.value = value;
     }
 
+    public UserType() {
+    }
 
     private void validate(String value){
 

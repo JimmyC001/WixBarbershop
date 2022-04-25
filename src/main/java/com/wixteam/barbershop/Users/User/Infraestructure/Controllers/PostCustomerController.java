@@ -14,12 +14,12 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/Users")
-public class PostCustomerController{
+public class PostCustomerController {
     @Autowired
-   // private UserCustomerCreator creator;
+    private UserCustomerCreator creator;
     @PostMapping(value = "/Customer")
-    public ResponseEntity<String> execute (@RequestBody CustomerRequest request){
-        //creator.execute( request.getUserId(), request.getUsername(), request.getPassword(), request.getPhone());
+    public ResponseEntity<String> execute (@RequestBody CustomerRequest request ){
+        creator.execute( request.getUserId(), request.getUsername(), request.getPassword(), request.getPhone());
         return ResponseEntity.status(HttpStatus.CREATED).body(" persona nombre " + request.toString() );
     }
     static class CustomerRequest{
