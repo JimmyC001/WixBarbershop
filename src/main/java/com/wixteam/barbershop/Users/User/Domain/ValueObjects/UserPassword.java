@@ -10,6 +10,8 @@ public class UserPassword extends StringValueObject {
         this.value = value;
     }
 
+    public UserPassword() {
+    }
 
     private void validate(String value){
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -25,8 +26,8 @@ public class HibernateConfigFactory {
         sessionFactory.setDataSource(this.datasource());
         sessionFactory.setHibernateProperties(this.hibernateProperties());
         //TODO: Resources
-
-        sessionFactory.setMappingLocations();
+        FileSystemResource resource1 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/User/Infraestructure/Hibernate/User.hbn.xml");
+        sessionFactory.setMappingLocations(resource1);
         return sessionFactory;
     }
     @Bean("transactional-manager")
