@@ -10,5 +10,4 @@ public interface DateRepository {
     public void save(Date date);
     public List<Date> all();
     public void delete(String idDate);
-
 }

@@ -7,7 +7,8 @@ public class DateDate extends StringValueObject {
         this.value=value;
     }
     public void validate(){
-
     }
 
+    public DateDate() {
+    }
 }

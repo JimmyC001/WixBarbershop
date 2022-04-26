@@ -16,10 +16,9 @@ public class HibernateDateRepository extends HibernateRespository<Date> implemen
         super(sessionFactory, Date.class);
     }
 
-
     @Override
     public void save(Date date) {
-
+        persist(date);
     }
 
     @Override

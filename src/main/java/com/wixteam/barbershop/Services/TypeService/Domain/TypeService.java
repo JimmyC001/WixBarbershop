@@ -11,6 +11,7 @@ public class TypeService {
     private TypeServiceName typeServiceName;
     private AddressId addressId;
 
+
     public TypeService(TypeServiceId typeServiceId, TypeServiceName typeServiceName, AddressId addressId) {
         this.typeServiceId = typeServiceId;
         this.typeServiceName = typeServiceName;
