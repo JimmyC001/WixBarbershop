@@ -34,6 +34,7 @@
     <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
         <constructor-arg ref="userRepository"/>
     </bean>
+
     <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
     </bean>
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
@@ -41,5 +42,25 @@
     </bean>
     <bean id="AdminFindAll" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
         <constructor-arg ref="adminRepository" />
+    </bean>
+    <!-- Products -->
+    <bean id="prodRepository" class="com.wixteam.barbershop.Products.Product.Infraestructure.Hibernate.HibernateProductRepository"></bean>
+    <bean id="ProductCreator" class="com.wixteam.barbershop.Products.Product.Application.Create.ProductCreator">
+        <constructor-arg ref="prodRepository"/>
+    </bean>
+    <bean id="ProductFindAll" class="com.wixteam.barbershop.Products.Product.Application.All.ProductFindAll">
+        <constructor-arg ref="prodRepository" />
+    </bean>
+    <bean id="ServiceFindAll" class="com.wixteam.barbershop.Services.Service.Application.All.ServiceFindAll">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceDelete" class="com.wixteam.barbershop.Services.Service.Application.Delete.ServiceDelete">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceCreator" class="com.wixteam.barbershop.Services.Service.Application.Create.ServiceCreator">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceUpdate" class="com.wixteam.barbershop.Services.Service.Application.Update.ServiceUpdate">
+        <constructor-arg ref="serviceRepository"/>
     </bean>
 </beans>

@@ -19,8 +19,9 @@ public class Product {
         this.productRating = productRating;
     }
 
-    public static Product create(){
-        return null;
+    public static Product create(ProductId productId, ProductDescription productDescription, ProductPrice productPrice, ProductQuantity productQuantity, ProductRating productRating){
+        Product product = new Product(productId,productDescription,productPrice,productQuantity,productRating);
+        return product;
     }
 
     public HashMap<String,Object> data(){

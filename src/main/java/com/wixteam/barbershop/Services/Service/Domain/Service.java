@@ -11,6 +11,8 @@ public class Service {
     private ServicePrice servicePrice;
     private ServiceDetails serviceDetails;
 
+    public Service(){}
+
     public Service(ServiceId serviceId, ServicePrice servicePrice, ServiceDetails serviceDetails) {
         this.serviceId = serviceId;
         this.servicePrice = servicePrice;
@@ -30,5 +32,29 @@ public class Service {
 
         };
         return data;
+    }
+
+    public ServiceId getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(ServiceId serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public ServicePrice getServicePrice() {
+        return servicePrice;
+    }
+
+    public void setServicePrice(ServicePrice servicePrice) {
+        this.servicePrice = servicePrice;
+    }
+
+    public ServiceDetails getServiceDetails() {
+        return serviceDetails;
+    }
+
+    public void setServiceDetails(ServiceDetails serviceDetails) {
+        this.serviceDetails = serviceDetails;
     }
 }
