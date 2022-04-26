@@ -1,8 +1,8 @@
-package com.wixteam.barbershop.Products.Admin.Domain;
+package com.wixteam.barbershop.Admin.Domain;
 
-import com.wixteam.barbershop.Products.Admin.Domain.ValueObjects.AdminId;
-import com.wixteam.barbershop.Products.Admin.Domain.ValueObjects.AdminName;
-import com.wixteam.barbershop.Products.Admin.Domain.ValueObjects.AdminPassword;
+import com.wixteam.barbershop.Admin.Domain.ValueObjects.AdminId;
+import com.wixteam.barbershop.Admin.Domain.ValueObjects.AdminName;
+import com.wixteam.barbershop.Admin.Domain.ValueObjects.AdminPassword;
 
 import java.util.HashMap;
 
