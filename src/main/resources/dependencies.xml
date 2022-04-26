@@ -5,9 +5,6 @@
 
     <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository">
     </bean>
-    <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
-    </bean>
-    <bean id="dateRepository" class="com.wixteam.barbershop.Services.Date.Infraestructure.Hibernate.HibernateDateRepository"></bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
@@ -26,6 +23,7 @@
     <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
         <constructor-arg ref="userRepository"/>
     </bean>
+
     <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
     </bean>
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
@@ -33,5 +31,20 @@
     </bean>
     <bean id="AdminFindAll" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
         <constructor-arg ref="adminRepository" />
+    </bean>
+
+    <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
+    </bean>
+    <bean id="ServiceFindAll" class="com.wixteam.barbershop.Services.Service.Application.All.ServiceFindAll">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceDelete" class="com.wixteam.barbershop.Services.Service.Application.Delete.ServiceDelete">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceCreator" class="com.wixteam.barbershop.Services.Service.Application.Create.ServiceCreator">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceUpdate" class="com.wixteam.barbershop.Services.Service.Application.Update.ServiceUpdate">
+        <constructor-arg ref="serviceRepository"/>
     </bean>
 </beans>
