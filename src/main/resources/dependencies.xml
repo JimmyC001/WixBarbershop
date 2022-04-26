@@ -48,7 +48,15 @@
         <constructor-arg ref="dateRepository" />
     </bean>
     <!-- Casos de uso Date-->
-    <!-- Casos de uso Service-->
+    <!-- Casos de uso Products-->
+    <bean id="prodRepository" class="com.wixteam.barbershop.Products.Product.Infraestructure.Hibernate.HibernateProductRepository"></bean>
+    <bean id="ProductCreator" class="com.wixteam.barbershop.Products.Product.Application.Create.ProductCreator">
+        <constructor-arg ref="prodRepository"/>
+    </bean>
+    <bean id="ProductFindAll" class="com.wixteam.barbershop.Products.Product.Application.All.ProductFindAll">
+        <constructor-arg ref="prodRepository" />
+    </bean>
+    <!-- Casos de uso Products-->
     <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
     </bean>
     <bean id="ServiceFindAll" class="com.wixteam.barbershop.Services.Service.Application.All.ServiceFindAll">
