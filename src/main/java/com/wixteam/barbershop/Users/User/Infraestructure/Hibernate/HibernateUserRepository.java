@@ -1,7 +1,6 @@
 package com.wixteam.barbershop.Users.User.Infraestructure.Hibernate;
 
 
-import com.wixteam.barbershop.Shared.Domain.Aggregate.CustomUUID;
 import com.wixteam.barbershop.Shared.Infraestructure.Hibernate.HibernateRespository;
 import com.wixteam.barbershop.Users.User.Domain.Ports.UserRepository;
 import com.wixteam.barbershop.Users.User.Domain.User;
@@ -21,7 +20,6 @@ public class HibernateUserRepository extends HibernateRespository<User> implemen
     @Override
     public void save(User user) {
         persist(user);
-
     }
 
     @Override

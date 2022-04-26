@@ -26,7 +26,15 @@
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
         <constructor-arg ref="adminRepository"/>
     </bean>
-    <bean id="" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
+    <bean id="AdminFindAll" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
         <constructor-arg ref="adminRepository" />
+    </bean>
+    <!-- Products -->
+    <bean id="prodRepository" class="com.wixteam.barbershop.Products.Product.Infraestructure.Hibernate.HibernateProductRepository"></bean>
+    <bean id="ProductCreator" class="com.wixteam.barbershop.Products.Product.Application.Create.ProductCreator">
+        <constructor-arg ref="prodRepository"/>
+    </bean>
+    <bean id="ProductFindAll" class="com.wixteam.barbershop.Products.Product.Application.All.ProductFindAll">
+        <constructor-arg ref="prodRepository" />
     </bean>
 </beans>
