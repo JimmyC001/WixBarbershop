@@ -27,7 +27,21 @@ public class HibernateConfigFactory {
         sessionFactory.setHibernateProperties(this.hibernateProperties());
         //TODO: Resources
         FileSystemResource resource1 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/User/Infraestructure/Hibernate/User.hbn.xml");
+        FileSystemResource resource2 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Admin/Infraestructure/Hibernate/Admin.hbn.xml");
+        FileSystemResource resource3 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Order/Infraestructure/Hibernate/Order.hbn.xml");
+        FileSystemResource resource4 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Product/Infraestructure/Hibernate/Product.hbn.xml");
+        FileSystemResource resource5 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Date/Infraestructure/Hibernate/Date.hbn.xml");
+        FileSystemResource resource6 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Service/Infraestructure/Hibernate/Service.hbn.xml");
+        FileSystemResource resource7 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/TypeService/Infraestructure/Hibernate/TypeService.hbn.xml");
+        FileSystemResource resource8 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/Address/Infraestructure/Hibernate/Address.hbn.xml");
         sessionFactory.setMappingLocations(resource1);
+        sessionFactory.setMappingLocations(resource2);
+        sessionFactory.setMappingLocations(resource3);
+        sessionFactory.setMappingLocations(resource4);
+        sessionFactory.setMappingLocations(resource5);
+        sessionFactory.setMappingLocations(resource6);
+        sessionFactory.setMappingLocations(resource7);
+        sessionFactory.setMappingLocations(resource8);
         return sessionFactory;
     }
     @Bean("transactional-manager")
