@@ -7,7 +7,7 @@
     </bean>
     <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
     </bean>
-
+    <bean id="dateRepository" class="com.wixteam.barbershop.Services.Date.Infraestructure.Hibernate.HibernateDateRepository"></bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
