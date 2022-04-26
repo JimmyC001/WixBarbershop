@@ -15,7 +15,7 @@ public class OrderStatus extends StringValueObject {
         allowedStatus(value);
     }
     public  void allowedStatus(String value){
-        if(!value.equals("No enviado")||!value.equals("En camino")||value.equals("Recibido")){
+        if(!value.equals("ACEPTADO")&&!value.equals("ENTREGADO")&&value.equals("EN CAMINO")&&!value.equals("CANCELADO")&&!value.equals("PAGADO")){
             throw new RuntimeException("Status no permitido");
         }
     }

@@ -13,6 +13,11 @@ public class Phone extends StringValueObject {
         this.value = value;
     }
     private void validate(String value){
-
+        length(value);
+    }
+    public void length( String value){
+        if(value.length()<10||value.length()>11){
+            throw new RuntimeException("numero corto");
+        }
     }
 }

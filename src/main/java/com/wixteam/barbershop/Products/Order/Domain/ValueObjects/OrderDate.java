@@ -15,7 +15,7 @@ public class OrderDate extends StringValueObject {
         lengthValue(value);
     }
     public void separate(String value){
-        if(!value.contains("/")||!value.contains("-")){
+        if(!value.contains("/") && !value.contains("-")){
             throw new RuntimeException("la fecha tiene que estar separada por / o -");
         }
     }
