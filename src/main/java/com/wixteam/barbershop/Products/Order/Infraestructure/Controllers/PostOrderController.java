@@ -1,6 +1,8 @@
 package com.wixteam.barbershop.Products.Order.Infraestructure.Controllers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wixteam.barbershop.Products.Order.Application.Create.OrderCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,8 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/Products")
 public class PostOrderController {
+
+    @Autowired
+    private OrderCreator creator;
+
     @PostMapping(value = "/Order")
     public ResponseEntity execute(@RequestBody OrderRequest request ){
+        creator.execute(request.getIdOrder(),request.getStatus(),request.getOrdenDate());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo la orden " + request.toString());
     }
 
@@ -20,8 +27,8 @@ public class PostOrderController {
 
         @JsonProperty("OrdenDate")
         private String OrdenDate;
-        @JsonProperty("Product")
-        private String Product;
+        @JsonProperty("idOrder")
+        private String idOrder;
         @JsonProperty("Status")
         private String Status;
 
@@ -32,7 +39,7 @@ public class PostOrderController {
         public String toString() {
             return "OrderRequest{" +
                     "OrdenDate='" + OrdenDate + '\'' +
-                    ", Product='" + Product + '\'' +
+                    ", idOrder='" + idOrder + '\'' +
                     ", Status='" + Status + '\'' +
                     '}';
         }
@@ -45,12 +52,12 @@ public class PostOrderController {
             OrdenDate = ordenDate;
         }
 
-        public String getProduct() {
-            return Product;
+        public String getIdOrder() {
+            return idOrder;
         }
 
-        public void setProduct(String product) {
-            Product = product;
+        public void setIdOrder(String idOrder) {
+            this.idOrder = idOrder;
         }
 
         public String getStatus() {

@@ -10,7 +10,7 @@ public class UserFindAll {
     public UserFindAll(UserRepository repository) {
         this.repository = repository;
     }
-    public List<User> execute(){
-        return  repository.all();
+   public List<User> execute(){
+           return  repository.all();
     }
 }

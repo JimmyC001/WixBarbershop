@@ -19,7 +19,7 @@ public class PostProductController {
     private ProductCreator create;
     @PostMapping(value = "/Create")
     public ResponseEntity<String> execute(@RequestBody ProductRequest request ){
-        create.execute(request.getId(),request.getDescription(),request.getPrice(),request.getQuantity(),request.getRating());
+        create.execute(request.getId(),request.getDescription(),request.getPrice(),request.getRating(),request.getQuantity());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo el Producto " + request.toString());
     }
 

@@ -1,6 +1,8 @@
 package com.wixteam.barbershop.Services.Date.Infraestructure.Controllers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wixteam.barbershop.Services.Date.Application.Create.dateCreate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,15 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/com/example/demo/Services")
+@RequestMapping(value = "/Services")
 public class PostDateController {
-    @PostMapping(value = "/Date")
-    public ResponseEntity<String> execute(@RequestBody DateRequest request ){
+    @Autowired
+    private dateCreate create;
+    @PostMapping(value = "/Date/Create")
+    public ResponseEntity execute(@RequestBody DateRequest request ){
+        create.execute(request.getIdDate(),request.getCustomerId(),request.getBarbersId(),request.getTypeService(),request.getServiceId(),request.getDate(), request.getAddId());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo la cita " + request.toString());
     }
 
     static class DateRequest{
-
+        @JsonProperty("Iddate")
+        private String IdDate;
         @JsonProperty("customerId")
         private String customerId;
         @JsonProperty("barbersId")
@@ -26,8 +32,18 @@ public class PostDateController {
         private String typeService;
         @JsonProperty("ServiceId")
         private String ServiceId;
+        @JsonProperty("addId")
+        private String addId;
         @JsonProperty("date")
         private String date;
+
+        public String getAddId() {
+            return addId;
+        }
+
+        public void setAddId(String addId) {
+            this.addId = addId;
+        }
 
         public DateRequest() {
         }
@@ -35,12 +51,22 @@ public class PostDateController {
         @Override
         public String toString() {
             return "DateRequest{" +
-                    "customerId='" + customerId + '\'' +
+                    "IdDate='" + IdDate + '\'' +
+                    ", customerId='" + customerId + '\'' +
                     ", barbersId='" + barbersId + '\'' +
                     ", typeService='" + typeService + '\'' +
                     ", ServiceId='" + ServiceId + '\'' +
+                    ", addId='" + addId + '\'' +
                     ", date='" + date + '\'' +
                     '}';
+        }
+
+        public String getIdDate() {
+            return IdDate;
+        }
+
+        public void setIdDate(String idDate) {
+            IdDate = idDate;
         }
 
         public String getCustomerId() {
