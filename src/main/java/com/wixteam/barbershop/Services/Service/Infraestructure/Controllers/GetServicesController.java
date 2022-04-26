@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GetServicesController {
     @Autowired
     //private AllServices all;
-    @GetMapping()
+    @GetMapping(value = "/All")
     public ResponseEntity<String> execute() {
         return  ResponseEntity.status(HttpStatus.OK).body("Regresa los Servicios");
     }

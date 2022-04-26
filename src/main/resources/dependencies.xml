@@ -2,7 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository"></bean>
+
+    <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository">
+    </bean>
+    <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
+    </bean>
+    <bean id="dateRepository" class="com.wixteam.barbershop.Services.Date.Infraestructure.Hibernate.HibernateDateRepository"></bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
