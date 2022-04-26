@@ -14,7 +14,6 @@ public class AllUsers {
     }
 
     public List<HashMap<String,Object>> response (){
-        List<HashMap<String,Object>> response = users.stream().map( user -> user.data()).collect(Collectors.toList());
-        return  response;
+        return users.stream().map( user -> user.data()).collect(Collectors.toList());
     }
 }

@@ -2,6 +2,8 @@ package com.wixteam.barbershop.Products.Product.Infraestructure.Controllers;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wixteam.barbershop.Products.Product.Application.Create.ProductCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,55 +13,57 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.*;
 
 @RestController
-@RequestMapping(value = "/Products")
+@RequestMapping(value = "/Product")
 public class PostProductController {
-    @PostMapping()
-    public ResponseEntity<String> execute3(@RequestBody ProductRequest request ){
+    @Autowired
+    private ProductCreator create;
+    @PostMapping(value = "/Create")
+    public ResponseEntity<String> execute(@RequestBody ProductRequest request ){
+        create.execute(request.getId(),request.getDescription(),request.getPrice(),request.getQuantity(),request.getRating());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo el Producto " + request.toString());
     }
 
     static class ProductRequest {
-        @JsonProperty("name")
-        private String name ;
+        @JsonProperty("id")
+        private String id;
+        @JsonProperty("description")
+        private String description;
         @JsonProperty("price")
-        private String price;
-        @JsonProperty("amount")
-        private String amount ;
+        private double price;
+        @JsonProperty("quantity")
+        private int quantity;
+        @JsonProperty("rating")
+        private int rating;
 
-        public  ProductRequest (){
+        public String getId() {
+            return id;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public int getQuantity() {
+            return quantity;
+        }
+
+        public int getRating() {
+            return rating;
         }
 
         @Override
         public String toString() {
-            return "BarbarRequest{" +
-                    "name='" + name + '\'' +
-                    ", price='" + price + '\'' +
-                    ", amount='" + amount + '\'' +
+            return "ProductRequest{" +
+                    "id='" + id + '\'' +
+                    ", description='" + description + '\'' +
+                    ", price=" + price +
+                    ", quantity=" + quantity +
+                    ", rating=" + rating +
                     '}';
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getPrice() {
-            return price;
-        }
-
-        public void setPrice(String price) {
-            this.price = price;
-        }
-
-        public String getAmount() {
-            return amount;
-        }
-
-        public void setAmount(String amount) {
-            this.amount = amount;
         }
     }
 
