@@ -2,8 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository">
-    </bean>
+    <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository"></bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
@@ -16,9 +15,9 @@
     <bean id="UserDelete" class="com.wixteam.barbershop.Users.User.Application.Delete.UserDelete">
         <constructor-arg ref="userRepository"/>
     </bean>
-    <bean id="HibernateAdminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
+    <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
     </bean>
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
-        <constructor-arg ref="HibernateAdminRepository"/>
+        <constructor-arg ref="adminRepository"/>
     </bean>
 </beans>

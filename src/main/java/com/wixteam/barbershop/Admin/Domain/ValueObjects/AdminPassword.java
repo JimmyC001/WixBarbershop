@@ -7,6 +7,7 @@ public class AdminPassword extends StringValueObject {
         validate(value);
         this.value=value;
     }
+    public AdminPassword(){}
     public void validate(String value){
 
     }

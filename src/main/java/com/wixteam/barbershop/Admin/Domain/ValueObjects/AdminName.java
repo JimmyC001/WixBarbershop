@@ -7,6 +7,7 @@ public class AdminName extends StringValueObject {
         validate(value);
         this.value = value;
     }
+    public AdminName(){}
     public void validate(String value){
 
     }
