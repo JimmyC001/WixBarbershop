@@ -42,6 +42,7 @@ public class HibernateConfigFactory {
         sessionFactory.setMappingLocations(resource6);
         sessionFactory.setMappingLocations(resource7);
         sessionFactory.setMappingLocations(resource8);
+        sessionFactory.setMappingLocations(resource1,resource2,resource3,resource4);
         return sessionFactory;
     }
     @Bean("transactional-manager")
