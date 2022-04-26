@@ -7,5 +7,5 @@ public class DateDelete {
     public DateDelete(DateRepository repository) {
         this.repository = repository;
     }
-    public void execute(){}
+    public void execute(String idDate){ repository.delete(idDate);}
 }

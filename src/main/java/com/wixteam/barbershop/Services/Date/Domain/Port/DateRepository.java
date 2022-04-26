@@ -10,4 +10,6 @@ public interface DateRepository {
     public void save(Date date);
     public List<Date> all();
     public void delete(String idDate);
+    public  Date find(String idDate);
+    public List<Date> allDateTypeUser(String idUser, String Type);
 }
