@@ -32,10 +32,8 @@ public class HibernateConfigFactory {
         FileSystemResource resource4 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Product/Infraestructure/Hibernate/Product.hbn.xml");
         FileSystemResource resource5 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Date/Infraestructure/Hibernate/Date.hbn.xml");
         FileSystemResource resource6 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Service/Infraestructure/Hibernate/Service.hbn.xml");
-        FileSystemResource resource7 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/TypeService/Infraestructure/Hibernate/TypeService.hbn.xml");
         FileSystemResource resource8 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/Address/Infraestructure/Hibernate/Address.hbn.xml");
-
-        sessionFactory.setMappingLocations(resource1,resource2, resource4,resource5, resource6/*,resource7,resource8*/);
+        sessionFactory.setMappingLocations(resource1,resource2, resource4,resource5, resource6,resource8/*,resource3*/);
         return sessionFactory;
     }
     @Bean("transactional-manager")
