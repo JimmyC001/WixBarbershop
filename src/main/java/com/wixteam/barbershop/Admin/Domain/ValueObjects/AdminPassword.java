@@ -1,4 +1,4 @@
-package com.wixteam.barbershop.Products.Admin.Domain.ValueObjects;
+package com.wixteam.barbershop.Admin.Domain.ValueObjects;
 
 import com.wixteam.barbershop.Shared.Domain.Aggregate.StringValueObject;
 
@@ -7,6 +7,7 @@ public class AdminPassword extends StringValueObject {
         validate(value);
         this.value=value;
     }
+    public AdminPassword(){}
     public void validate(String value){
         lengthValue(value);
         numbers(value);

@@ -1,6 +1,5 @@
 package com.wixteam.barbershop.Users.User.Infraestructure.Controllers;
 
-import com.wixteam.barbershop.Users.User.Application.All.AllCustomers;
 import com.wixteam.barbershop.Users.User.Application.All.AllUsers;
 import com.wixteam.barbershop.Users.User.Application.All.UserFindAll;
 import org.springframework.beans.factory.annotation.Autowired;

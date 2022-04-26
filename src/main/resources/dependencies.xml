@@ -2,8 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean id="userRepository" class="com.wixteam.barbershop.Users.User.Infraestructure.Hibernate.HibernateUserRepository">
     </bean>
+    <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
+    </bean>
+    <bean id="dateRepository" class="com.wixteam.barbershop.Services.Date.Infraestructure.Hibernate.HibernateDateRepository"></bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
@@ -16,5 +20,18 @@
     <bean id="UserDelete" class="com.wixteam.barbershop.Users.User.Application.Delete.UserDelete">
         <constructor-arg ref="userRepository"/>
     </bean>
-
+    <bean id="userUpdate" class="com.wixteam.barbershop.Users.User.Application.Update.userUpdate">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
+    </bean>
+    <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
+        <constructor-arg ref="adminRepository"/>
+    </bean>
+    <bean id="AdminFindAll" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
+        <constructor-arg ref="adminRepository" />
+    </bean>
 </beans>
