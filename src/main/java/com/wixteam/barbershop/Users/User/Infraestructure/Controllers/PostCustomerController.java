@@ -17,7 +17,7 @@ import java.net.URI;
 public class PostCustomerController {
     @Autowired
     private UserCustomerCreator creator;
-    @PostMapping(value = "/Customer")
+    @PostMapping(value = "/Customer/Create")
     public ResponseEntity<String> execute (@RequestBody CustomerRequest request ){
         creator.execute( request.getUserId(), request.getUsername(), request.getPassword(), request.getPhone());
         return ResponseEntity.status(HttpStatus.CREATED).body(" persona nombre " + request.toString() );

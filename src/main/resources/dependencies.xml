@@ -7,5 +7,11 @@
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
+    <bean id="UserBarberCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserBarberCreator">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean id="UserFindAll" class="com.wixteam.barbershop.Users.User.Application.All.UserFindAll">
+        <constructor-arg ref="userRepository"/>
+    </bean>
 
 </beans>

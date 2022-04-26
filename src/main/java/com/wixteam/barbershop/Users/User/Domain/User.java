@@ -18,6 +18,9 @@ public class User {
     private Phone phone;
     private ArrayList<Order> orders;
 
+    public User() {
+    }
+
     public User(UserId userid, UserName username, UserPassword userPassword, UserType usertype, Phone phone) {
         this.userid = userid;
         this.username = username;
@@ -34,7 +37,7 @@ public class User {
             {
                 put("id",userid.value());
                 put("name",username.value());
-                put("phone",phone);
+                put("phone",phone.value());
                 put("type",usertype.value());
 
 ;            }

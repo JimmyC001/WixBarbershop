@@ -18,8 +18,6 @@ public class HibernateUserRepository extends HibernateRespository<User> implemen
 
     @Override
     public void save(User user) {
-        System.out.println("lo intente");
-        System.out.println(user.data().get("name"));
         persist(user);
 
     }

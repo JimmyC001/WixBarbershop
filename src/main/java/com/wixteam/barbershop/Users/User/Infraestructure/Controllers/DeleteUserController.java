@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/Users")
-public class DeleteBarbersController {
-    @DeleteMapping(value = "/Barbers/{BarbersId}")
-    public ResponseEntity execute(@PathVariable("BarbersId") String id) {
+public class DeleteUserController {
+    @DeleteMapping(value = "/Delete/{UserId}")
+    public ResponseEntity execute(@PathVariable("UserId") String id) {
         return ResponseEntity.status(HttpStatus.OK).body("Se Elimino el Barbero con id " + id );
     }
 }

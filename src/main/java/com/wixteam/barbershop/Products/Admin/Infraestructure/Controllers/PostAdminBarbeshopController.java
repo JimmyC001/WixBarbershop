@@ -16,6 +16,7 @@ public class PostAdminBarbeshopController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo el admin " + request.toString());
     }
     static class AdminRequest{
+
         @JsonProperty("name")
         private String name ;
         @JsonProperty("password")

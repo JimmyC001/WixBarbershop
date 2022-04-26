@@ -14,6 +14,10 @@ public class CustomUUID implements Serializable {
         validate(value);
         this.value = value;
     }
+
+    public CustomUUID() {
+    }
+
     public String value(){
         return value;
     }

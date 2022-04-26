@@ -1,6 +1,8 @@
 package com.wixteam.barbershop.Users.User.Infraestructure.Controllers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wixteam.barbershop.Users.User.Application.Create.UserBarberCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,40 +12,42 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/Users")
+
 public class PostBarbersController {
-    @PostMapping(value = "/Barber")
+    @Autowired
+    private UserBarberCreator create;
+
+    @PostMapping(value = "/Barber/Create")
     public ResponseEntity<String> execute3(@RequestBody BarbarRequest request ){
+        create.execute( request.getUserId(), request.getUsername(), request.getPassword(), request.getPhone());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo el Barbero" + request.toString());
     }
     static class BarbarRequest {
-        @JsonProperty("name")
-        private String name ;
+        @JsonProperty("userId")
+        private String userId ;
         @JsonProperty("phone")
         private String phone;
-        @JsonProperty("type")
-        private String type ;
+        @JsonProperty("username")
+        private String username ;
         @JsonProperty("password")
         private String password;
 
         @Override
         public String toString() {
             return "CustomerRequest{" +
-                    "name='" + name + '\'' +
+                    "userId='" + userId + '\'' +
                     ", phone='" + phone + '\'' +
-                    ", type='" + type + '\'' +
+                    ", username='" + username + '\'' +
                     ", password='" + password + '\'' +
                     '}';
         }
 
-        public BarbarRequest() {
+        public String getUserId() {
+            return userId;
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
+        public void setUserId(String userId) {
+            this.userId = userId;
         }
 
         public String getPhone() {
@@ -54,12 +58,12 @@ public class PostBarbersController {
             this.phone = phone;
         }
 
-        public String getType() {
-            return type;
+        public String getUsername() {
+            return username;
         }
 
-        public void setType(String type) {
-            this.type = type;
+        public void setUsername(String username) {
+            this.username = username;
         }
 
         public String getPassword() {
@@ -69,6 +73,5 @@ public class PostBarbersController {
         public void setPassword(String password) {
             this.password = password;
         }
-
     }
 }
