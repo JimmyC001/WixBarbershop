@@ -7,7 +7,15 @@
     </bean>
     <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
     </bean>
+    <bean id="addressRepository" class="com.wixteam.barbershop.Users.Address.Infraestructure.Hibernate.HibernateAddressRepository" ></bean>
     <bean id="dateRepository" class="com.wixteam.barbershop.Services.Date.Infraestructure.Hibernate.HibernateDateRepository"></bean>
+
+    <bean id="AddressFindAll" class="com.wixteam.barbershop.Users.Address.Application.All.AddressFindAll">
+        <constructor-arg ref="addressRepository"/>
+    </bean>
+    <bean id="AddressCreator" class="com.wixteam.barbershop.Users.Address.Application.Create.AddressCreator">
+        <constructor-arg ref="addressRepository"/>
+    </bean>
     <bean id="UserCustomerCreator" class="com.wixteam.barbershop.Users.User.Application.Create.UserCustomerCreator">
         <constructor-arg ref="userRepository"/>
     </bean>
