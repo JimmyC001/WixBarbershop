@@ -9,4 +9,6 @@ public interface UserRepository {
     public List<User> all();
     public List<User> allCustomer(String customer);
     public List<User> allBarber(String Barber);
+    public void delete(String idUser);
+    public void update(User user, String idUser);
 }

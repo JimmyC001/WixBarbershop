@@ -13,5 +13,8 @@
     <bean id="UserFindAll" class="com.wixteam.barbershop.Users.User.Application.All.UserFindAll">
         <constructor-arg ref="userRepository"/>
     </bean>
+    <bean id="UserDelete" class="com.wixteam.barbershop.Users.User.Application.Delete.UserDelete">
+        <constructor-arg ref="userRepository"/>
+    </bean>
 
 </beans>
