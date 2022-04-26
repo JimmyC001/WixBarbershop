@@ -6,9 +6,10 @@ import com.wixteam.barbershop.Shared.Infraestructure.Hibernate.HibernateResposit
 import com.wixteam.barbershop.Users.User.Domain.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Transactional("transactional-manager")
 public class HibernateServiceRepository extends HibernateRespository<Service> implements ServiceRepository {
     protected HibernateServiceRepository(@Qualifier("session-factory") SessionFactory sessionFactor) {
         super(sessionFactor, Service.class);
