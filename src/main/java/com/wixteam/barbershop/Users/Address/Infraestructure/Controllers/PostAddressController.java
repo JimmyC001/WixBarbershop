@@ -45,6 +45,7 @@ public class PostAddressController {
                     ", addressDetail='" + addressDetail + '\'' +
                     ", addressAdditionalInfo='" + addressAdditionalInfo + '\'' +
                     ", addressNeighborhodd='" + addressNeighborhodd + '\'' +
+                    ", userId='"+userId+'\''+
                     '}';
         }
 

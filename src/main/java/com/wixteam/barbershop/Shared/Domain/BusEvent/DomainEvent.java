@@ -43,7 +43,7 @@ public  abstract class DomainEvent {
         return acorredOn;
     }
 
-    public abstract String eventname();
+    public abstract String eventName();
 
     public abstract HashMap<String, Serializable> toPrimitive();
 

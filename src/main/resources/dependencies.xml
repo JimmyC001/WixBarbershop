@@ -18,12 +18,20 @@
     <bean id="orderRepository" class="com.wixteam.barbershop.Products.Order.Infraestructure.Hibernate.HibernateOrderRepository">
     </bean>
     <!-- Repositorioro-->
+    <!-- RabbitMQ -->
+    <bean id="RabbitMqPublisher" class="com.wixteam.barbershop.Shared.Infraestructure.RabbitMQ.RabbitMqPublisher">
+    </bean>
+    <bean id="RabbitMqEventBus" class="com.wixteam.barbershop.Shared.Infraestructure.RabbitMQ.RabbitMqEventBus">
+        <constructor-arg ref="RabbitMqPublisher"/>
+    </bean>
+    <!-- RabbitMQ -->
     <!-- Casos de uso Adrees-->
     <bean id="AddressFindAll" class="com.wixteam.barbershop.Users.Address.Application.All.AddressFindAll">
         <constructor-arg ref="addressRepository"/>
     </bean>
     <bean id="AddressCreator" class="com.wixteam.barbershop.Users.Address.Application.Create.AddressCreator">
         <constructor-arg ref="addressRepository"/>
+        <constructor-arg ref="RabbitMqEventBus"/>
     </bean>
     <!-- Casos de uso Adrees-->
     <!-- Casos de uso susuario-->
