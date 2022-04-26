@@ -45,4 +45,36 @@ public class User {
         };
         return  data;
     }
+
+    public UserName getUsername() {
+        return username;
+    }
+
+    public void setUsername(UserName username) {
+        this.username = username;
+    }
+
+    public UserPassword getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(UserPassword userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public UserType getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(UserType usertype) {
+        this.usertype = usertype;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
 }

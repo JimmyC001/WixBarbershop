@@ -11,7 +11,7 @@ public class userUpdate {
         this.repository = repository;
     }
 
-    void execute(String userid, String username,String userPassword,String phone){
+    public void execute(String userid, String username, String userPassword, String phone){
         User user = new User(new UserId(userid) , new UserName(username) , new UserPassword(userPassword) , new UserType("Barber"), new Phone(phone));
         repository.update(user, userid);
     }

@@ -46,9 +46,26 @@ public class HibernateUserRepository extends HibernateRespository<User> implemen
     }
 
     @Override
-    public void update(User user, String idUser) {
-        User use1 = byId(new UserId(idUser)).get();
+    public void update(User userN, String idUser) {
+        User use = byId( new UserId(idUser)).get();
+        if(userN.getUserPassword().value() != null)
+            use.setUserPassword(userN.getUserPassword());
+        if(userN.getUsername().value()  != null)
+            use.setUsername(userN.getUsername());
+        if(userN.getPhone().value()  != null)
+            use.setPhone(userN.getPhone());
+        updateEntity(use);
+    }
 
+    @Override
+    public boolean Login(String username, String password) {
+        List<User> users = getAll().get();
+        for (User u: users ) {
+            if(u.getUsername().value().equals(username) && u.getUserPassword().value().equals(password)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

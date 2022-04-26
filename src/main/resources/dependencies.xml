@@ -15,9 +15,18 @@
     <bean id="UserDelete" class="com.wixteam.barbershop.Users.User.Application.Delete.UserDelete">
         <constructor-arg ref="userRepository"/>
     </bean>
+    <bean id="userUpdate" class="com.wixteam.barbershop.Users.User.Application.Update.userUpdate">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
+        <constructor-arg ref="userRepository"/>
+    </bean>
     <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
     </bean>
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
         <constructor-arg ref="adminRepository"/>
+    </bean>
+    <bean id="" class="com.wixteam.barbershop.Admin.Application.All.AdminFindAll">
+        <constructor-arg ref="adminRepository" />
     </bean>
 </beans>

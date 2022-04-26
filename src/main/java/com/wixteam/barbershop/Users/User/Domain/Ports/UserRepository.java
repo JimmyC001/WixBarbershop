@@ -11,4 +11,5 @@ public interface UserRepository {
     public List<User> allBarber(String Barber);
     public void delete(String idUser);
     public void update(User user, String idUser);
+    public boolean Login(String username, String password);
 }
