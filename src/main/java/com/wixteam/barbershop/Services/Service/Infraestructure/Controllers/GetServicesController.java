@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/Services")
 public class GetServicesController {
-    @Autowired
-    private AllServices all;
+    //@Autowired
+    //private AllServices all;
     @GetMapping()
     public ResponseEntity<String> execute() {
         return  ResponseEntity.status(HttpStatus.OK).body("Regresa los Servicios");
