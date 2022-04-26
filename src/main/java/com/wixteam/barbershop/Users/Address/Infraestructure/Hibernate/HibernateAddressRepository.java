@@ -18,11 +18,11 @@ public class HibernateAddressRepository extends HibernateRespository<Address> im
 
     @Override
     public void save(Address address) {
-
+        persist(address);
     }
 
     @Override
     public List<Address> all() {
-        return null;
+        return getAll().get();
     }
 }

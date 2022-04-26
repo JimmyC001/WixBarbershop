@@ -12,7 +12,7 @@ public class Address {
     private AddressAdditionalInfo addressAdditionalInfo;
     private AddressNeighborhood addressNeighborhodd;
     private UserId userId;
-
+    public Address(){}
     public Address(AddressId addressId, AddressDetail addressDetail, AddressCity addressCity, AddressAdditionalInfo addressAdditionalInfo, AddressNeighborhood addressNeighborhodd, UserId userId) {
         this.addressId = addressId;
         this.addressDetail = addressDetail;
