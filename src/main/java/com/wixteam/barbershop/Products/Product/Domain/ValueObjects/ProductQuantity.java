@@ -8,6 +8,11 @@ public class ProductQuantity extends IntegerValueObject {
         this.value=value;
     }
     public void validate(int value){
-
+        notVoid(value);
+    }
+    public void notVoid(int value){
+        if(value<=0){
+            throw new RuntimeException("La cantidad tiene que ser superior a 1");
+        }
     }
 }

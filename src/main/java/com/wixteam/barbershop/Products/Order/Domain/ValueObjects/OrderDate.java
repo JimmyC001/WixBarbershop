@@ -8,6 +8,17 @@ public class OrderDate extends StringValueObject {
         this.value = value;
     }
     public void validate(String value){
-
+        separate(value);
+        lengthValue(value);
+    }
+    public void separate(String value){
+        if(!value.contains("/")||!value.contains("-")){
+            throw new RuntimeException("la fecha tiene que estar separada por / o -");
+        }
+    }
+    public void lengthValue(String value){
+        if(value.length()!=10 ){
+            throw new RuntimeException("Formato de fecha incorrecta tiene que ser dd/mm/aaaa o dd-mm-aaaa ");
+        }
     }
 }

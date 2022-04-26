@@ -8,6 +8,11 @@ public class OrderStatus extends StringValueObject {
         this.value=value;
     }
     public void validate(String value){
-
+        allowedStatus(value);
+    }
+    public  void allowedStatus(String value){
+        if(!value.equals("No enviado")||!value.equals("En camino")||value.equals("Recibido")){
+            throw new RuntimeException("Status no permitido");
+        }
     }
 }

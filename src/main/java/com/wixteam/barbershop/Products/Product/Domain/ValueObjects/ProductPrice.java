@@ -10,4 +10,9 @@ public class ProductPrice extends DoubleValueObject {
     public void validate(double value){
 
     }
+    public void notFree(double value){
+        if(value<=0){
+            throw new RuntimeException("El precio no puede ser igual o menor a 0");
+        }
+    }
 }

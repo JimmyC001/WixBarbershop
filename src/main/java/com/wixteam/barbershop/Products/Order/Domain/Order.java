@@ -22,9 +22,12 @@ public class Order {
         this.orderDate = orderDate;
         this.product = product;
     }
-    public static Order create(){
-        return null;
+
+    public static Order create(OrderId orderId, OrderValue orderValue, OrderStatus orderStatus, OrderDate orderDate, Product product){
+        Order order = new Order(orderId,orderValue,orderStatus,orderDate,product);
+        return order;
     }
+
     public HashMap<String,Object> data(){
         HashMap<String,Object> data = new HashMap<>(){
             {
