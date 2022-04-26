@@ -31,8 +31,11 @@
     <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
         <constructor-arg ref="userRepository"/>
     </bean>
+
     <!-- Casos de uso susuario-->
     <!-- Casos de uso Admin-->
+    <bean id="adminRepository" class="com.wixteam.barbershop.Admin.Infraestructure.Hibernate.HibernateAdminRepository">
+    </bean>
     <bean id="AdminCreator" class="com.wixteam.barbershop.Admin.Application.Create.AdminCreator">
         <constructor-arg ref="adminRepository"/>
     </bean>
@@ -45,4 +48,20 @@
         <constructor-arg ref="dateRepository" />
     </bean>
     <!-- Casos de uso Date-->
+    <!-- Casos de uso Service-->
+    <bean id="serviceRepository" class="com.wixteam.barbershop.Services.Service.Infraestructure.Hibernate.HibernateServiceRepository">
+    </bean>
+    <bean id="ServiceFindAll" class="com.wixteam.barbershop.Services.Service.Application.All.ServiceFindAll">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceDelete" class="com.wixteam.barbershop.Services.Service.Application.Delete.ServiceDelete">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceCreator" class="com.wixteam.barbershop.Services.Service.Application.Create.ServiceCreator">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <bean id="ServiceUpdate" class="com.wixteam.barbershop.Services.Service.Application.Update.ServiceUpdate">
+        <constructor-arg ref="serviceRepository"/>
+    </bean>
+    <!-- Casos de uso Service-->
 </beans>

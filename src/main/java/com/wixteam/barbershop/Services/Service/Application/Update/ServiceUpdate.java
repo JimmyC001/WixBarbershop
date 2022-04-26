@@ -11,7 +11,7 @@ public class ServiceUpdate {
 
     public ServiceUpdate(ServiceRepository repository){this.repository=repository;}
 
-    void execute(String serviceid, double servicePrice, String serviceDetails){
+    public void execute(String serviceid, double servicePrice, String serviceDetails){
         Service service = new Service(new ServiceId(serviceid), new ServicePrice(servicePrice), new ServiceDetails(serviceDetails));
         repository.update(service,serviceid);
     }
