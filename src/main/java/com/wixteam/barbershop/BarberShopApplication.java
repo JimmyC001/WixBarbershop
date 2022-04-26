@@ -13,5 +13,4 @@ public class BarberShopApplication {
         SpringApplication sApp = new SpringApplication(BarberShopApplication.class);
         sApp.run(args);
     }
-
 }

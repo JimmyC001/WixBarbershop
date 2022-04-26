@@ -15,8 +15,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-
 public class HibernateConfigFactory {
+
     @Autowired
     private Environment env;
 
@@ -27,14 +27,14 @@ public class HibernateConfigFactory {
         sessionFactory.setHibernateProperties(this.hibernateProperties());
         //TODO: Resources
         FileSystemResource resource1 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/User/Infraestructure/Hibernate/User.hbn.xml");
-        FileSystemResource resource2 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Admin/Infraestructure/Hibernate/Admin.hbn.xml");
+        FileSystemResource resource2 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Admin/Infraestructure/Hibernate/Admin.hbn.xml");
         FileSystemResource resource3 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Order/Infraestructure/Hibernate/Order.hbn.xml");
         FileSystemResource resource4 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Products/Product/Infraestructure/Hibernate/Product.hbn.xml");
         FileSystemResource resource5 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Date/Infraestructure/Hibernate/Date.hbn.xml");
         FileSystemResource resource6 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/Service/Infraestructure/Hibernate/Service.hbn.xml");
         FileSystemResource resource7 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Services/TypeService/Infraestructure/Hibernate/TypeService.hbn.xml");
         FileSystemResource resource8 = new FileSystemResource("./src/main/java/com/wixteam/barbershop/Users/Address/Infraestructure/Hibernate/Address.hbn.xml");
-        sessionFactory.setMappingLocations(resource1);
+        sessionFactory.setMappingLocations(resource1,resource2/*,esource3,resource4,resource5,resource6,resource7,resource8*/);
         return sessionFactory;
     }
     @Bean("transactional-manager")
