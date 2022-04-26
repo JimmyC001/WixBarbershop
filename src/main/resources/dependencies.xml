@@ -16,5 +16,10 @@
     <bean id="UserDelete" class="com.wixteam.barbershop.Users.User.Application.Delete.UserDelete">
         <constructor-arg ref="userRepository"/>
     </bean>
-
+    <bean id="userUpdate" class="com.wixteam.barbershop.Users.User.Application.Update.userUpdate">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean id="loginUser" class="com.wixteam.barbershop.Users.User.Application.Login.loginUser">
+        <constructor-arg ref="userRepository"/>
+    </bean>
 </beans>

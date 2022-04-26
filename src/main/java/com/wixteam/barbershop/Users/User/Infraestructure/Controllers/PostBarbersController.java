@@ -17,7 +17,7 @@ public class PostBarbersController {
     @Autowired
     private UserBarberCreator create;
 
-    @PostMapping(value = "/Barber/Create")
+    @PostMapping(value = "/Barber/Create/")
     public ResponseEntity<String> execute3(@RequestBody BarbarRequest request ){
         create.execute( request.getUserId(), request.getUsername(), request.getPassword(), request.getPhone());
         return ResponseEntity.status(HttpStatus.CREATED).body("Se creo el Barbero" + request.toString());
