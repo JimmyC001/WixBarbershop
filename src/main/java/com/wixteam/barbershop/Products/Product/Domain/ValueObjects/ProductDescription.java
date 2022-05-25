@@ -9,6 +9,11 @@ public class ProductDescription extends StringValueObject {
         this.value = value;
     }
     public void validate(String value){
-
+        lengthValue(value);
+    }
+    public void lengthValue(String value){
+        if(value.length()<1 || value.length()>2000){
+            throw new RuntimeException(" Longitud invalida ");
+        }
     }
 }

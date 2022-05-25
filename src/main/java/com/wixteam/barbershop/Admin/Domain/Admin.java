@@ -19,8 +19,9 @@ public class Admin {
         this.adminPassword = adminPassword;
     }
 
-    public static Admin create(){
-        return null;
+    public static Admin create(AdminId adminId,AdminName adminName, AdminPassword adminPassword){
+        Admin admin = new Admin(adminId,adminName,adminPassword);
+        return admin;
     }
     public HashMap<String,Object> data(){
         HashMap<String,Object> data = new HashMap<>(){

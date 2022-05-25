@@ -14,6 +14,19 @@ public class UserName extends StringValueObject {
     }
 
     private void validate(String value){
-
+        lengthValue(value);
+        notAllowedCharacter(value);
+    }
+    public void lengthValue(String value){
+        if(value.length()<2 || value.length()>20){
+            throw new RuntimeException(" Longitud invalida ");
+        }
+    }
+    private void notAllowedCharacter(String value){
+        if(value.contains("$") ||value.contains("%")||value.contains("&")||
+                value.contains("!")||value.contains("?")||value.contains("¡")||
+                value.contains("¿")||value.contains("*")){
+            throw new RuntimeException(" Caracteres no validos ");
+        }
     }
 }

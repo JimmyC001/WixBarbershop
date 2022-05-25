@@ -9,6 +9,11 @@ public class ProductRating extends IntegerValueObject {
         this.value=value;
     }
     public void validate(int value){
-
+        allowRange(value);
+    }
+    public void allowRange(int value){
+        if (value<0||value>5){
+            throw new RuntimeException("Calificacion fuera del rango");
+        }
     }
 }

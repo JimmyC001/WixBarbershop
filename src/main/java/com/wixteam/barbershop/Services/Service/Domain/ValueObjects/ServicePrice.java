@@ -10,6 +10,11 @@ public class ServicePrice extends DoubleValueObject {
         this.value = value;
     }
     public void validate(double value){
-
+        notNegative(value);
+    }
+    public void notNegative(double value){
+        if(value<0){
+            throw new RuntimeException("El precio no puede ser negtivo");
+        }
     }
 }
