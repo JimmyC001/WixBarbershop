@@ -2,6 +2,7 @@ package com.wixteam.barbershop.Services.Service.Infraestructure.Controllers;
 
 import com.wixteam.barbershop.Services.Service.Application.All.AllServices;
 import com.wixteam.barbershop.Services.Service.Application.All.ServiceFindAll;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@Tag(name = "Services", description = "Services REST API")
 @RequestMapping(value = "/Services")
 public class GetServicesController {
     @Autowired

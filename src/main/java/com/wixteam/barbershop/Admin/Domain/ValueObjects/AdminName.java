@@ -1,6 +1,8 @@
 package com.wixteam.barbershop.Admin.Domain.ValueObjects;
 
+import com.wixteam.barbershop.Admin.Domain.Exceptions.InvalidNameAdmin;
 import com.wixteam.barbershop.Shared.Domain.Aggregate.StringValueObject;
+import com.wixteam.barbershop.Shared.Domain.Exceptions.LengthInvalid;
 
 public class AdminName extends StringValueObject {
     public AdminName(String value) {
@@ -14,14 +16,14 @@ public class AdminName extends StringValueObject {
     }
     public void lengthValue(String value){
         if(value.length()<2 || value.length()>20){
-            throw new RuntimeException(" Longitud invalida ");
+            throw new LengthInvalid(" Longitud invalida ");
         }
     }
     private void notAllowedCharacter(String value){
        if(value.contains("$") ||value.contains("%")||value.contains("&")||
                value.contains("!")||value.contains("?")||value.contains("¡")||
                value.contains("¿")||value.contains("*")){
-           throw new RuntimeException(" Caracteres no validos ");
+           throw new InvalidNameAdmin(" Caracteres no validos ");
         }
     }
 }

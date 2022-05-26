@@ -1,5 +1,6 @@
 package com.wixteam.barbershop.Products.Order.Domain.ValueObjects;
 
+import com.wixteam.barbershop.Products.Order.Domain.Exceptions.InvalidOrderStatus;
 import com.wixteam.barbershop.Shared.Domain.Aggregate.StringValueObject;
 
 public class OrderStatus extends StringValueObject {
@@ -16,7 +17,7 @@ public class OrderStatus extends StringValueObject {
     }
     public  void allowedStatus(String value){
         if(!value.equals("ACEPTADO")&&!value.equals("ENTREGADO")&&value.equals("EN CAMINO")&&!value.equals("CANCELADO")&&!value.equals("PAGADO")){
-            throw new RuntimeException("Status no permitido");
+            throw new InvalidOrderStatus("Status no permitido");
         }
     }
 }

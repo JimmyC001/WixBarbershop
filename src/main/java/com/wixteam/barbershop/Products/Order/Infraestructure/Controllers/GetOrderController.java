@@ -2,6 +2,7 @@ package com.wixteam.barbershop.Products.Order.Infraestructure.Controllers;
 
 import com.wixteam.barbershop.Products.Order.Application.All.AllOrders;
 import com.wixteam.barbershop.Products.Order.Application.All.OrderFindAll;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@Tag(name = "Orders", description = "Orders REST API")
 @RequestMapping(value = "/Orders")
 public class GetOrderController {
     @Autowired

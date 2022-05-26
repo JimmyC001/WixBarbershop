@@ -1,5 +1,6 @@
 package com.wixteam.barbershop.Products.Order.Domain.ValueObjects;
 
+import com.wixteam.barbershop.Products.Order.Domain.Exceptions.InvalidOrderValue;
 import com.wixteam.barbershop.Shared.Domain.Aggregate.DoubleValueObject;
 
 public class OrderValue extends DoubleValueObject {
@@ -16,7 +17,7 @@ public class OrderValue extends DoubleValueObject {
 
     public void notNegative( double value){
         if(value<0){
-            throw new RuntimeException("El valor no puede ser negativo");
+            throw new InvalidOrderValue("El valor no puede ser negativo");
         }
     }
 }

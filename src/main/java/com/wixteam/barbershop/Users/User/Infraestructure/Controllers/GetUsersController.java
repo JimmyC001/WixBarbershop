@@ -2,6 +2,7 @@ package com.wixteam.barbershop.Users.User.Infraestructure.Controllers;
 
 import com.wixteam.barbershop.Users.User.Application.All.AllUsers;
 import com.wixteam.barbershop.Users.User.Application.All.UserFindAll;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@Tag(name = "Users", description = "Users REST API")
 @RequestMapping(value = "/Users")
 public class GetUsersController {
     @Autowired

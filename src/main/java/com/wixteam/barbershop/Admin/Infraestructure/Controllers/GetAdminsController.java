@@ -3,6 +3,7 @@ package com.wixteam.barbershop.Admin.Infraestructure.Controllers;
 
 import com.wixteam.barbershop.Admin.Application.All.AdminFindAll;
 import com.wixteam.barbershop.Admin.Application.All.AllAdmins;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@Tag(name = "Admin", description = "Admin REST API")
 @RequestMapping(value = "/Admin")
 public class GetAdminsController {
     @Autowired

@@ -1,5 +1,6 @@
 package com.wixteam.barbershop.Products.Order.Domain.ValueObjects;
 
+import com.wixteam.barbershop.Products.Order.Domain.Exceptions.InvalidOrderDate;
 import com.wixteam.barbershop.Shared.Domain.Aggregate.StringValueObject;
 
 public class OrderDate extends StringValueObject {
@@ -16,12 +17,12 @@ public class OrderDate extends StringValueObject {
     }
     public void separate(String value){
         if(!value.contains("/") && !value.contains("-")){
-            throw new RuntimeException("la fecha tiene que estar separada por / o -");
+            throw new InvalidOrderDate("la fecha tiene que estar separada por / o -");
         }
     }
     public void lengthValue(String value){
         if(value.length()!=10 ){
-            throw new RuntimeException("Formato de fecha incorrecta tiene que ser dd/mm/aaaa o dd-mm-aaaa ");
+            throw new InvalidOrderDate("Formato de fecha incorrecta tiene que ser dd/mm/aaaa o dd-mm-aaaa ");
         }
     }
 }
