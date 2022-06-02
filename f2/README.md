@@ -1,2 +1,0 @@
-# WixBarbershop
-Project API Barbershop
