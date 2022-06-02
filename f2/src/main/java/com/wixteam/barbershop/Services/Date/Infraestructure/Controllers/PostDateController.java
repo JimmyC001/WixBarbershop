@@ -21,7 +21,6 @@ import java.util.HashMap;
 
 @RestController
 @Tag(name = "Dates", description = "Dates REST API")
-@CrossOrigin
 @RequestMapping(value = "/Services")
 public class PostDateController {
     @Autowired

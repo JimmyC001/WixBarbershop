@@ -26,7 +26,6 @@ import java.util.HashMap;
 
 @RestController
 @Tag(name = "Admin", description = "Admin REST API")
-@CrossOrigin
 @RequestMapping(value = "/Admin")
 public class PostAdminBarbeshopController {
 

@@ -20,7 +20,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @RestController
+<<<<<<< HEAD:f2/src/main/java/com/wixteam/barbershop/Users/User/Infraestructure/Controllers/PostCustomerController.java
 @CrossOrigin
+=======
+>>>>>>> parent of c268a03 (Cross Origin):src/main/java/com/wixteam/barbershop/Users/User/Infraestructure/Controllers/PostCustomerController.java
 @Tag(name = "Users", description = "Users REST API")
 @RequestMapping(value = "/Users")
 public class PostCustomerController {
