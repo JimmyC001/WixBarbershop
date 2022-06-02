@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @Tag(name = "Dates", description = "Dates REST API")
+@CrossOrigin
 @RequestMapping(value = "/Services/Date")
 public class GetDateController {
     @Autowired
