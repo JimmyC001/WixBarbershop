@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @RestController
+@CrossOrigin
 @Tag(name = "Users", description = "Users REST API")
 @RequestMapping(value = "/Users")
 public class PostCustomerController {

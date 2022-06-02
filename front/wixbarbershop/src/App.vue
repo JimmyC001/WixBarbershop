@@ -11,13 +11,14 @@
     <div class="wrapper-input">
       <label>Contraseña:</label>
       <input type="text" class="form" v-model="customer.password" />
-      <button @click="show">registrarse</button>
     </div>
+    <button @click="getAll">registrarse</button>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+import axios from "axios";
 export default {
   name: "App",
   setup() {
@@ -31,16 +32,25 @@ export default {
     function addCounter() {
       counter.value--;
     }
-    function show(){
-      console.log(customer.value.name)
-      console.log(customer.value.cellphone)
-      console.log(customer.value.password)
+    function show() {
+      console.log(customer.value.name);
+      console.log(customer.value.cellphone);
+      console.log(customer.value.password);
+    }
+    function getAll() {
+      axios
+        .get("http://localhost:8080/Users/Customers/All")
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e) => console.log(e));
     }
     return {
       counter,
       addCounter,
       customer,
       show,
+      getAll,
     };
   },
 };
