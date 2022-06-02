@@ -22,7 +22,6 @@ import java.util.HashMap;
 @RestController
 @CrossOrigin
 @Tag(name = "Users", description = "Users REST API")
-@CrossOrigin
 @RequestMapping(value = "/Users")
 public class PostCustomerController {
     @Autowired

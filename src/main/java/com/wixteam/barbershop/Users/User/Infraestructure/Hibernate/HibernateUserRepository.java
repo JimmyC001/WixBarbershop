@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Transactional("transactional-manager")
@@ -56,14 +57,15 @@ public class HibernateUserRepository extends HibernateRespository<User> implemen
     }
 
     @Override
-    public boolean Login(String username, String password) {
+    public HashMap<String,Object> Login(String username, String password) {
         List<User> users = getAll().get();
         for (User u: users ) {
             if(u.getUsername().value().equals(username) && u.getUserPassword().value().equals(password)){
-                return true;
+                return u.data();
             }
         }
-        return false;
+        assert User.create() != null;
+        return User.create().data();
     }
 
 }

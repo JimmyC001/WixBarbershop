@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,8 +34,8 @@ public class PostLoginController {
     })
 
     @PostMapping(value = "/Login")
-    public ResponseEntity<Boolean> execute(@RequestBody LoginRequest request ){
-        boolean response = log.execute(request.getName(), request.getPasword());
+    public ResponseEntity<HashMap<String,Object>> execute(@RequestBody LoginRequest request ){
+        HashMap<String,Object> response = log.execute(request.getName(), request.getPasword());
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
