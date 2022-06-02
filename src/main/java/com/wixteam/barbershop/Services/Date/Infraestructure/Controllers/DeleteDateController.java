@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 @RestController
 @Tag(name = "Dates", description = "Dates REST API")
+@CrossOrigin
 @RequestMapping(value = "Services/Date")
 public class DeleteDateController {
     @Autowired

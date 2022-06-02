@@ -21,6 +21,7 @@ import java.util.HashMap;
 
 @RestController
 @Tag(name = "Address", description = "Address REST API")
+@CrossOrigin
 @RequestMapping(value = "/Address")
 public class PostAddressController {
     @Autowired
