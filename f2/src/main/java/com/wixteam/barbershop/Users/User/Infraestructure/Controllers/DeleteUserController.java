@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 @RestController
 @Tag(name = "Users", description = "Users REST API")
+@CrossOrigin
 @RequestMapping(value = "/Users")
 public class DeleteUserController {
     @Autowired

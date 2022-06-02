@@ -20,6 +20,7 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping(value = "/Users")
+@CrossOrigin
 public class PutUserControllers {
     @Autowired
     private userUpdate update;
